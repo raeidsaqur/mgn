@@ -1,0 +1,73 @@
+
+slurm
+#pgfm/reason files
+#pgfm/reason/scripts_vector
+
+pgfm/checkpoints/*
+#ns-vqa files
+ns-vqa/data/*
+!ns-vqa/scene_parse
+
+#clevr-iep files
+clevr-iep/checkpoints
+clevr-iep/models/
+clevr-dataset-gen/*.out
+clevr-dataset-gen/image_generation/*.out
+
+wandb
+logs
+data
+!data/reason/
+#data/reason/*
+!data/reason/results
+
+*.pyc
+.env/
+*.swp
+.ipynb_checkpoints/
+
+# PyCharm
+.idea/*
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Generated files
+.idea/**/contentModel.xml
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Debug
+lib.backup
+envs
+
