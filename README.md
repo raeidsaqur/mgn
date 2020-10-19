@@ -1,3 +1,5 @@
+![Logo](imgs/mgn-thumbnail-600x600.png)
+
 # Multimodal Graph Networks (MGN) 
 Associated supporting code for the [Multimodal Graph Networks] paper(https://arxiv.org/).
 
