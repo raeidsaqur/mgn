@@ -1,0 +1,393 @@
+[
+  {
+    "text": [      
+      "<Z> <C> <M> <S>"      
+    ],
+    "ref_answers": [
+      ">0"
+    ],
+    "nodes": [
+      {
+        "inputs": [],
+        "type": "scene"
+      },
+      {
+        "side_inputs": [
+          "<Z>",
+          "<C>",
+          "<M>",
+          "<S>"
+        ],
+        "inputs": [
+          0
+        ],
+        "type": "filter"
+      },
+      {
+      	"inputs": [
+      	  1
+      	],
+      	"type": "count"
+      }
+    ],
+    "params": [
+      {
+        "type": "Size",
+        "name": "<Z>"
+      },
+      {
+        "type": "Color",
+        "name": "<C>"
+      },
+      {
+        "type": "Material",
+        "name": "<M>"
+      },
+      {
+        "type": "Shape",
+        "name": "<S>"
+      }
+    ],
+    "constraints": [
+    ]
+  },
+  {
+    "text": [      
+      "<C> <M> <S>"      
+    ],
+    "ref_answers": [
+      ">0"
+    ],
+    "nodes": [
+      {
+        "inputs": [],
+        "type": "scene"
+      },
+      {
+        "side_inputs": [
+          "<C>"     
+        ],
+        "inputs": [
+          0
+        ],
+        "type": "filter_color"
+      },
+      {
+        "side_inputs": [
+          "<M>"     
+        ],
+        "inputs": [
+          1
+        ],
+        "type": "filter_material"
+      },
+      {
+        "side_inputs": [
+          "<S>"     
+        ],
+        "inputs": [
+          2
+        ],
+        "type": "filter_shape"
+      },
+      {
+        "inputs": [
+          3
+        ],
+        "type": "count"
+      }
+    ],
+    "params": [     
+      {
+        "type": "Color",
+        "name": "<C>"
+      },
+      {
+        "type": "Material",
+        "name": "<M>"
+      },
+      {
+        "type": "Shape",
+        "name": "<S>"
+      }
+    ],
+    "constraints": [
+    ]
+  },
+  {
+    "text": [      
+      "<Z> <M> <S>"      
+    ],
+    "ref_answers": [
+      ">0"
+    ],
+    "nodes": [
+      {
+        "inputs": [],
+        "type": "scene"
+      },
+      {
+        "side_inputs": [
+          "<Z>"     
+        ],
+        "inputs": [
+          0
+        ],
+        "type": "filter_size"
+      },
+      {
+        "side_inputs": [
+          "<M>"     
+        ],
+        "inputs": [
+          1
+        ],
+        "type": "filter_material"
+      },
+      {
+        "side_inputs": [
+          "<S>"     
+        ],
+        "inputs": [
+          2
+        ],
+        "type": "filter_shape"
+      },
+      {
+        "inputs": [
+          3
+        ],
+        "type": "count"
+      }
+    ],
+    "params": [
+      {
+        "type": "Size",
+        "name": "<Z>"
+      },     
+      {
+        "type": "Material",
+        "name": "<M>"
+      },
+      {
+        "type": "Shape",
+        "name": "<S>"
+      }
+    ],
+    "constraints": [
+    ]
+  },
+  {
+    "text": [      
+      "<Z> <C> <S>"      
+    ],
+    "ref_answers": [
+      ">0"
+    ],
+    "nodes": [
+      {
+        "inputs": [],
+        "type": "scene"
+      },
+      {
+        "side_inputs": [
+          "<C>"     
+        ],
+        "inputs": [
+          0
+        ],
+        "type": "filter_color"
+      },
+      {
+        "side_inputs": [
+          "<Z>"     
+        ],
+        "inputs": [
+          1
+        ],
+        "type": "filter_size"
+      },
+      {
+        "side_inputs": [
+          "<S>"     
+        ],
+        "inputs": [
+          2
+        ],
+        "type": "filter_shape"
+      },
+      {
+        "inputs": [
+          3
+        ],
+        "type": "count"
+      }
+    ],
+    "params": [
+      {
+        "type": "Size",
+        "name": "<Z>"
+      },
+      {
+        "type": "Color",
+        "name": "<C>"
+      },
+      {
+        "type": "Shape",
+        "name": "<S>"
+      }
+    ],
+    "constraints": [
+    ]
+  },
+  {
+    "text": [      
+      "<M> <S>"      
+    ],
+    "ref_answers": [
+      ">0"
+    ],
+    "nodes": [
+      {
+        "inputs": [],
+        "type": "scene"
+      },      
+      {
+        "side_inputs": [
+          "<M>"     
+        ],
+        "inputs": [
+          0
+        ],
+        "type": "filter_material"
+      },
+      {
+        "side_inputs": [
+          "<S>"     
+        ],
+        "inputs": [
+          1
+        ],
+        "type": "filter_shape"
+      },
+      {
+        "inputs": [
+          2
+        ],
+        "type": "count"
+      }
+    ],
+    "params": [      
+      {
+        "type": "Material",
+        "name": "<M>"
+      },
+      {
+        "type": "Shape",
+        "name": "<S>"
+      }
+    ],
+    "constraints": [
+    ]
+  },
+  {
+    "text": [      
+      "<C> <S>"      
+    ],
+    "ref_answers": [
+      ">0"
+    ],
+    "nodes": [
+      {
+        "inputs": [],
+        "type": "scene"
+      },
+      {
+        "side_inputs": [
+          "<C>"     
+        ],
+        "inputs": [
+          0
+        ],
+        "type": "filter_color"
+      },
+      {
+        "side_inputs": [
+          "<S>"     
+        ],
+        "inputs": [
+          1
+        ],
+        "type": "filter_shape"
+      },
+      {
+        "inputs": [
+          2
+        ],
+        "type": "count"
+      }
+    ],
+    "params": [     
+      {
+        "type": "Color",
+        "name": "<C>"
+      },    
+      {
+        "type": "Shape",
+        "name": "<S>"
+      }
+    ],
+    "constraints": [
+    ]
+  },
+  {
+    "text": [      
+      "<Z> <S>"      
+    ],
+    "ref_answers": [
+      ">0"
+    ],
+    "nodes": [
+      {
+        "inputs": [],
+        "type": "scene"
+      },
+      {
+        "side_inputs": [
+          "<Z>"     
+        ],
+        "inputs": [
+          0
+        ],
+        "type": "filter_size"
+      },
+      {
+        "side_inputs": [
+          "<S>"     
+        ],
+        "inputs": [
+          1
+        ],
+        "type": "filter_shape"
+      },
+      {
+        "inputs": [
+          2
+        ],
+        "type": "count"
+      }
+    ],
+    "params": [
+      {
+        "type": "Size",
+        "name": "<Z>"
+      },      
+      {
+        "type": "Shape",
+        "name": "<S>"
+      }
+    ],
+    "constraints": [
+    ]
+  }
+]

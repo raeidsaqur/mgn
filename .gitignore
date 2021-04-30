@@ -1,25 +1,11 @@
 
 slurm
-#pgfm/reason files
-#pgfm/reason/scripts_vector
-
-pgfm/checkpoints/*
-#ns-vqa files
-ns-vqa/data/*
-!ns-vqa/scene_parse
-
-#clevr-iep files
-clevr-iep/checkpoints
-clevr-iep/models/
+#clevr-dataset-gen files
 clevr-dataset-gen/*.out
 clevr-dataset-gen/image_generation/*.out
 
 wandb
 logs
-data
-!data/reason/
-#data/reason/*
-!data/reason/results
 
 *.pyc
 .env/

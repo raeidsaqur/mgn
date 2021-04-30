@@ -1,0 +1,4 @@
+[submodule "vendors/clevr-dataset-gen"]
+	path = vendors/clevr-dataset-gen
+	url = git@github.com:facebookresearch/clevr-dataset-gen.git
+	ignore=dirty

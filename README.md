@@ -50,7 +50,65 @@ Once installed, validate the available LMs using:
 
 ![spacy_validate](./imgs/spacy-validate.png) 
 
+## Dataset Generation
+Please follow instructions from the CLEVR Dataset Generation repo [here](git@github.com:facebookresearch/clevr-dataset-gen.git)
+You can clone a local copy under `./vendors` within the project using:
 
-## Demo  <a name="demo"></a>
+`git submodule update --init --recursive`
 
-## References <a name="references"></a>
+For replicating the experiments with captions, we can essentially use the same scripts in the aforementioned repo, but 
+simply use '__caption generation__' templates. These templates are included in the `data/templates` directory.
+
+A demo data directory for illustration can be obtained by running:
+```angular2html
+. data/download-demo-data.sh
+```
+The subsequent structure of the data folder should look like:
+![data-mgn-demo](./imgs/data-mgn-demo1.png)
+
+The CLOSURE templates (post downloading) are under `data/CLOSURE_v1.0`. Addtional templates 
+are under `data/templates`
+
+## Running Experiments
+
+- Preprocess the questions/captions to generate the .h5 file (e.g. _clevr_train_questions_25k.h5_)
+- __Train__: Pretrain on 25K questions, then use the pre-trained model for fine-tuning (using REINFORCE)
+     - Pretrain:
+     ```angular2html
+     $ python ${ROOT}/mgn/tools/run_train.py \
+                     --checkpoint_every 50   \
+                     --num_iters 100 \
+                     --run_dir ../data/outputs/model_pretrain_clevr_25kpg \
+                     --clevr_train_question_path ../data/${PATH_TO_PREPROCESSED_QUESTIONS}/clevr_train_questions_25000/clevr_train_questions_25k.h5 \
+                     --gembd_vec_dim 96
+     ```
+       
+     - Fine-Tune:
+     ```angular2html
+     $ python ${ROOT}/mgn/tools/run_train.py \
+                     --reinforce 1 \
+                     --learning_rate 1e-5 \
+                     --checkpoint_every 50   \
+                     --num_iters 100 \
+                     --run_dir ../data/outputs/model_reinforce_clevr_25kpg \
+                     --load_checkpoint_path ../data/outputs/model_pretrain_clevr_25kpg/checkpoint_best.pt \
+                     --clevr_train_question_path ../data/${PATH_TO_PREPROCESSED_QUESTIONS}/clevr_train_questions_25000/clevr_train_questions_25k.h5 \
+                     --gembd_vec_dim 96 
+     
+     ```
+
+- __Test__: 
+     ```angular2html
+     $ python ${ROOT}/mgn/tools/run_test.py \                     
+                     --run_dir ../data/results \
+                     --clevr_val_scene_path ../data/{PATH_TO_SCENES}/clevr_val_scenes_parsed.json \
+                     --clevr_val_question_path ../data/{PATH_TO_PREPROCESSED_QUESTIONS}/clevr_val_questions.h5 \
+                     --clevr_vocab_path ../data/{PATH_TO_VOCAB}/clevr_vocab.json \
+                     --load_checkpoint_path ../data/outputs/model_reinforce_clevr_25kpg/checkpoint_best.pt
+                     --max_val_samples 1024 \
+                     --is_baseline_model 0
+     ```
+
+[comment]: <> (## Demo  <a name="demo"></a>)
+
+[comment]: <> (## References <a name="references"></a>)

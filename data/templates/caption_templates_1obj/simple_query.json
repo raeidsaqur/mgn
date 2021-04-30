@@ -1,0 +1,19 @@
+{
+  "params": [
+    {"type": "Size", "name": "<Z>"},
+    {"type": "Color", "name": "<C>"},
+    {"type": "Material", "name": "<M>"},
+    {"type": "Shape", "name": "<S>"}
+  ],
+  "text": [
+    "What color is the <Z> <M> <S>?"
+  ],
+  "nodes": [
+    {"type": "scene", "inputs": []},
+    {"type": "filter_unique", "inputs": [0], "side_inputs": ["<Z>", "<M>", "<S>"]},
+    {"type": "query_color", "inputs": [1]}
+  ],
+  "constraints": [
+    {"type": "NULL", "params": ["<C>"]}
+  ]
+}

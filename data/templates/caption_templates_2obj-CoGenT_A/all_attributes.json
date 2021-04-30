@@ -1,0 +1,37 @@
+[
+    {
+        "text": [
+            "A <Z2> <C2> <M2> <S2> is <R> the <Z> <C> <M> <S>",
+            "There is a <Z> <C> <M> <S>; a <Z2> <C2> <M2> <S2> is <R> it"
+        ],
+        "ref_answers": [">0", 1],
+        "nodes": [
+            {
+                "inputs": [],
+                "type": "scene"
+            },
+            {
+                "side_inputs": ["<Z>", "<C>", "<M>", "<S>"],
+                "inputs": [0],
+                "type": "filter_unique"
+            },
+            {
+                "side_inputs": ["<R>", "<Z2>", "<C2>", "<M2>", "<S2>"],
+                "inputs": [1],
+                "type": "relate_filter_count"
+            }
+        ],
+        "params": [
+            {"type": "Size", "name": "<Z>"},
+            {"type": "Color", "name": "<C>"},
+            {"type": "Material", "name": "<M>"},
+            {"type": "Shape", "name": "<S>"},
+            {"type": "Relation", "name": "<R>"},
+            {"type": "Size", "name": "<Z2>"},
+            {"type": "Color", "name": "<C2>"},
+            {"type": "Material", "name": "<M2>"},
+            {"type": "Shape", "name": "<S2>"}
+        ],
+        "constraints": []
+    }
+]
